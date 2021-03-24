@@ -17,16 +17,16 @@ public class DaoBiodata {
 	JdbcTemplate jdbc ;
 	
 	public int insertBiodata(Biodata biodata) {
-		return jdbc.update("insert into biodata(nik,nama,alamat,id_salary) values ("+biodata.getNik()+",'"+biodata.getNama()+"','"+biodata.getAlamat()+"',"+biodata.getId_salary()+")");
+		return jdbc.update("insert into biodata(nik,nama,alamat,id_salary) values ('"+biodata.getNik()+"','"+biodata.getNama()+"','"+biodata.getAlamat()+"',"+biodata.getId_salary()+")");
 		
 	}
 	
 	public int updateBiodata(Biodata biodata) {
-		return jdbc.update("update biodata set nama='"+biodata.getNama()+"',nama='"+biodata.getNama()+"',alamat='"+biodata.getAlamat()+"',id_salary="+biodata.getId_salary()+" where nik="+biodata.getNik()+"");
+		return jdbc.update("update biodata set nama='"+biodata.getNama()+"',nama='"+biodata.getNama()+"',alamat='"+biodata.getAlamat()+"',id_salary="+biodata.getId_salary()+" where nik='"+biodata.getNik()+"'");
 	}
 
 	public int deleteBiodata(Biodata biodata) {
-		return jdbc.update("DELETE FROM `biodata` WHERE nik = "+biodata.getNik()+"");
+		return jdbc.update("DELETE FROM `biodata` WHERE nik = '"+biodata.getNik()+"'");
 	}
 
 	

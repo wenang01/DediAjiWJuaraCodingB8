@@ -2,16 +2,16 @@ package com.juaracoding.main.model;
 
 public class Biodata {
  
-  private int nik;
+  private String nik;
   private String nama;
   private String alamat;
   private int id_salary;
   
   
-public int getNik() {
+public String getNik() {
 	return nik;
 }
-public void setNik(int nik) {
+public void setNik(String nik) {
 	this.nik = nik;
 }
 public String getNama() {
