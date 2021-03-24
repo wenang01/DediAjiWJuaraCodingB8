@@ -54,6 +54,21 @@ public class AbsensiController {
 		
 	}
 	
+	public List<Absensi> getByNik(String nik) {
+		String query = "SELECT * FROM `absensi` WHERE nik = '"+nik+"'";
+		List <Absensi> absensi =  jdbc.query(query,new AbsensiRowMapper());
+		return absensi;
+		
+	}
+	
+	public List<Absensi> getByYear(String year) {
+		//SELECT * from `absensi` WHERE startDate LIKE '2020%' OR endDate LIKE '2020%'
+		String query = "SELECT * FROM `absensi` WHERE startDate = '"+year+"%' OR endDate LIKE '"+year+"%'";
+		List <Absensi> absensi =  jdbc.query(query,new AbsensiRowMapper());
+		return absensi;
+		
+	}
+	
 	 @PostMapping("/")
 	    public String add(@RequestBody Absensi absensi) {
 		 
@@ -70,6 +85,16 @@ public class AbsensiController {
 		 	deleteAbsensi(nik);
 	 }
 	 
+	 
+	 @GetMapping("/{nik}")
+	    public List<Absensi> findNik(@PathVariable String nik) {
+	        return getByNik(nik);
+	    }
+	 
+	 @GetMapping("/year/{year}")
+	    public List<Absensi> findYear(@PathVariable String year) {
+	        return getByYear(year);
+	    }
 	 
 	 @GetMapping("/")
 	    public List<Absensi> list() {

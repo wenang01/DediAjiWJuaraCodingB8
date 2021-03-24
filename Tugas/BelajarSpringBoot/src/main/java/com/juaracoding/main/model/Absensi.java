@@ -5,7 +5,16 @@ public class Absensi {
 	  private String nik,
 					 nama,
 					 startDate,
-					 endDate;
+					 endDate,
+					 year;
+
+	public String getYear() {
+		return year;
+	}
+
+	public void setYear(String year) {
+		this.year = year;
+	}
 
 	public String getNik() {
 		return nik;
