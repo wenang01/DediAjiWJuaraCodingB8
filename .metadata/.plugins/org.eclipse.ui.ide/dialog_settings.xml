@@ -16,6 +16,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="D:\JAVA_BASIC_BATCH8\BelajarSpringboot2"/>
 			<item value="D:\JUARACODING_BATCH8\Tugas\BelajarSpringBoot"/>
 		</list>
 	</section>

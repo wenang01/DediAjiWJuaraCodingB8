@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.AbsensiRowMapper"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.Absensi"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.Worker"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.WorkerRowMapper"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.Title"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.TitleRowMapper"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.Bonus"/>
+    <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapper"/>
+    <fullyQualifiedTypeName name="com.juaracoding.main.model.BonusRowMapper"/>
+</qualifiedTypeNameHistroy>

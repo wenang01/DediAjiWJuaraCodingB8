@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,8 +18,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.juaracoding.main.model.Absensi;
 import com.juaracoding.main.model.AbsensiRowMapper;
-import com.juaracoding.main.model.Biodata;
-import com.juaracoding.main.model.BiodataRowMapper;
 
 @RestController
 @RequestMapping("/absensi")
@@ -36,6 +33,16 @@ public class AbsensiController {
 		List <Absensi> absensi =  jdbc.query(sql,new AbsensiRowMapper());
 		
 		return absensi;
+		
+		
+	}
+	
+	public List<Absensi> getAnuitas() {
+		
+		String sql = "call ulangBulan('2020-12-12',20000000,1.2,15) ";
+		List <Absensi> ulangbulan =  jdbc.query(sql,new AbsensiRowMapper());
+		
+		return ulangbulan;
 		
 		
 	}
@@ -93,6 +100,11 @@ public class AbsensiController {
 	 
 	 @GetMapping("/year/{year}")
 	    public List<Absensi> findYear(@PathVariable String year) {
+	        return getByYear(year);
+	    }
+	 
+	 @GetMapping("/year/")
+	    public List<Absensi> findYearB(@RequestBody String year) {
 	        return getByYear(year);
 	    }
 	 
