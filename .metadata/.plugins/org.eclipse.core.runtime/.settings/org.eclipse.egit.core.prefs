@@ -1,4 +1,5 @@
 GitRepositoriesView.GitDirectories=D\:\\JUARACODING_BATCH8\\.git;D\:\\JAVA_BASIC_BATCH8\\BelajarSpringboot2\\.git;
 GitRepositoriesView.GitDirectories.relative=.git;D\:\\JAVA_BASIC_BATCH8\\BelajarSpringboot2\\.git;
 core_autoIgnoreDerivedResources=false
+core_preferredMergeStrategy=jgit-default-mergeStrategy
 eclipse.preferences.version=1

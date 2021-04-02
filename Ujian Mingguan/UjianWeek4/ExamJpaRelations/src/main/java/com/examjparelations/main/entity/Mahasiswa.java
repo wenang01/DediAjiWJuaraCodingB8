@@ -37,17 +37,18 @@ public class Mahasiswa {
 	@Column(name = "password")
 	private String 	password;
 	
+	@ManyToMany(mappedBy = "lstMahasiswa")
+	private List<PlotMataKuliah> lstPlotMataKuliah;
+	
+	/*
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 	        name = "plot_mata_kuliah", 
 	        joinColumns = { @JoinColumn(name = "nim", referencedColumnName = "id")},
 	        inverseJoinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")})
-//	private List<Mahasiswa> lstMahasiswa = new ArrayList<Mahasiswa>();
-	private List<PlotMataKuliah> lstPlotMataKuliah;
-	/*
-	@ManyToMany(mappedBy = "lstMahasiswa")
-//	List<PlotMataKuliah> lstPlotMataKuliah = new ArrayList<PlotMataKuliah>();
-	List<PlotMataKuliah> lstPlotMataKuliah;
+	private List<Mahasiswa> lstMahasiswa = new ArrayList<Mahasiswa>();
 	*/
+
+
 	
 }
