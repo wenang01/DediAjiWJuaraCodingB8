@@ -23,7 +23,8 @@ public class KPRController {
 
 	public List<KPR> getKPR() {
 
-		String sql = "CALL `ulangBulan2`(2021-03-24', 20000000, 1.2, 15);";
+		String sql = "CALL `ulangBulan2`('2021-03-24', '20000000', '1.2', '15');";
+//		String sql = "SET @p0='2020-02-02'; SET @p1='20000000'; SET @p2='1.2'; SET @p3='15'; CALL `ulangBulan2`(@p0, @p1, @p2, @p3);";
 
 		List<KPR> kpr = jdbc.query(sql, new KPRRowMapper());
 

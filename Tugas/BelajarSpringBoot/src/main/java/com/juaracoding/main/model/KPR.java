@@ -13,8 +13,14 @@ public class KPR {
 public KPR() {
 	
 }
-public KPR(int angsuranke, String tanggal, double totalAngsuran, double angsuranPokok, double angsuranBunga,
+public KPR(
+		int angsuranke, 
+		String tanggal, 
+		double totalAngsuran, 
+		double angsuranPokok, 
+		double angsuranBunga,
 		double sisaPinjam) {
+	
 	super();
 	this.angsuranke = angsuranke;
 	this.tanggal = tanggal;
