@@ -12,6 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.examjparelations.main.entity.Admin;
 import com.examjparelations.main.entity.Dosen;
 import com.examjparelations.main.entity.Mahasiswa;
 import com.examjparelations.main.entity.MataKuliah;
@@ -19,6 +20,7 @@ import com.examjparelations.main.entity.Nilai;
 import com.examjparelations.main.entity.Pertanyaan;
 import com.examjparelations.main.entity.PlotMataKuliah;
 import com.examjparelations.main.entity.Soal;
+import com.examjparelations.main.repositories.AdminRepository;
 import com.examjparelations.main.repositories.DosenRepository;
 import com.examjparelations.main.repositories.MahasiswaRepository;
 import com.examjparelations.main.repositories.MataKuliahRepository;
@@ -55,9 +57,13 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 	@Autowired
 	NilaiRepository nilaiRepository;
 	
+	@Autowired
+	AdminRepository adminRepository;
+	
 	@Override
 	public void run(String... args) throws Exception {
 
+				
 		//==MataKuliah==//
 		MataKuliah matkul1 = new MataKuliah();
 		matkul1.setId(234);
@@ -176,6 +182,17 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		lstNilai.add(nilai);
 		
 		this.nilaiRepository.saveAll(lstNilai);
+		
+		
+		Admin admin = new Admin();
+		admin.setUsername("username");
+		admin.setPassword("password");
+		
+		List<Admin> lstAdmin = new ArrayList<Admin>();
+		lstAdmin.add(admin);
+		
+		this.adminRepository.saveAll(lstAdmin);
+		
 		
 	}
 

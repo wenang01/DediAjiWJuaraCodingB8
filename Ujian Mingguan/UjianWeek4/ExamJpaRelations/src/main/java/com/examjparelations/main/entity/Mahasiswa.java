@@ -40,6 +40,7 @@ public class Mahasiswa {
 	@ManyToMany(mappedBy = "lstMahasiswa")
 	private List<PlotMataKuliah> lstPlotMataKuliah;
 	
+	
 	/*
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
