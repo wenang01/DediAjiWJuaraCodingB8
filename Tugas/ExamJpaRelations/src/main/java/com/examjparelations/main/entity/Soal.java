@@ -34,11 +34,16 @@ public class Soal {
 	@ManyToMany(mappedBy = "lstSoal")
 	private List<Pertanyaan> lstPertanyaan;
 	
+	/*
+	@ManyToMany(mappedBy = "lstSoal")
+	private List<PlotMataKuliah> lstPlotMataKuliah;
+	*/
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 	        name = "soal", 
 	        joinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")},
 	        inverseJoinColumns = { @JoinColumn(name = "plot_id", referencedColumnName = "id")})
 	private List<PlotMataKuliah> lstPlotMataKuliah;
-	
+
 }

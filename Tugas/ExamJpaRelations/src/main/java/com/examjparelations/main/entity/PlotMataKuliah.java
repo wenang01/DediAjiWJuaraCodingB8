@@ -19,6 +19,7 @@ import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data
 @AllArgsConstructor
@@ -30,11 +31,12 @@ public class PlotMataKuliah {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long	id;
-	private Long	matkul_id;	
-	private Long	nim;	
-	private Long	dosen_id;	
+	private long	id;
+	private long	matkul_id;	
+	private long	nim;	
+	private long	dosen_id;
 
+	/*
 	@ManyToMany(mappedBy = "lstPlotMataKuliah")
 	private List<MataKuliah> lstMataKuliah;
 	
@@ -43,26 +45,23 @@ public class PlotMataKuliah {
 	
 	@ManyToMany(mappedBy = "lstPlotMataKuliah")
 	private List<Dosen> lstDosen;
-	
+	*/
 	@ManyToMany(mappedBy = "lstPlotMataKuliah")
 	private List<Soal> lstSoal;
 
-	/*
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(
-	        name = "soal", 
-	        joinColumns = { @JoinColumn(name = "soal_id", referencedColumnName = "id")},
-	        inverseJoinColumns = { @JoinColumn(name = "matkul_id", referencedColumnName = "id")})
-//	private List<MataKuliah> lstMataKuliah = new ArrayList<MataKuliah>();
-	private List<Soal> lstSoal;
 	
-	/*
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 	        name = "plot_mata_kuliah", 
 	        joinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")},
 	        inverseJoinColumns = { @JoinColumn(name = "nim", referencedColumnName = "id")})
-//	private List<Mahasiswa> lstMahasiswa = new ArrayList<Mahasiswa>();
+	private List<MataKuliah> lstMataKuliah;
+	
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+	        name = "plot_mata_kuliah", 
+	        joinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")},
+	        inverseJoinColumns = { @JoinColumn(name = "nim", referencedColumnName = "id")})
 	private List<Mahasiswa> lstMahasiswa;
 	
 	@ManyToMany(cascade = CascadeType.ALL)
@@ -70,7 +69,14 @@ public class PlotMataKuliah {
 	        name = "plot_mata_kuliah", 
 	        joinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")},
 	        inverseJoinColumns = { @JoinColumn(name = "dosen_id", referencedColumnName = "id")})
-//	private List<Dosen> lstDosen = new ArrayList<Dosen>();
 	private List<Dosen> lstDosen;
+	
+	/*
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(
+	        name = "soal", 
+	        joinColumns = { @JoinColumn(name = "soal_id", referencedColumnName = "soal_id")},
+	        inverseJoinColumns = { @JoinColumn(name = "matkul_id", referencedColumnName = "id")})
+	private List<Soal> lstSoal;
 	*/
 }

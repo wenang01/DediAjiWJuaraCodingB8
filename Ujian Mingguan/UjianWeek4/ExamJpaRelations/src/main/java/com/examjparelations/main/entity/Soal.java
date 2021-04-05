@@ -38,6 +38,7 @@ public class Soal {
 	@ManyToMany(mappedBy = "lstSoal")
 	private List<PlotMataKuliah> lstPlotMataKuliah;
 	*/
+	
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 	        name = "soal", 

@@ -35,7 +35,8 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(ExamJpaRelationsApplication.class, args);
 	}
-
+	
+	/*
 	@Autowired
 	MahasiswaRepository mahasiswaRepository;
 	
@@ -59,11 +60,11 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 	
 	@Autowired
 	AdminRepository adminRepository;
-	
+	*/
 	@Override
 	public void run(String... args) throws Exception {
 
-				
+		/*
 		//==MataKuliah==//
 		MataKuliah matkul1 = new MataKuliah();
 		matkul1.setId(234);
@@ -184,6 +185,7 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		this.nilaiRepository.saveAll(lstNilai);
 		
 		
+		//==Admin==//
 		Admin admin = new Admin();
 		admin.setUsername("username");
 		admin.setPassword("password");
@@ -193,7 +195,7 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		
 		this.adminRepository.saveAll(lstAdmin);
 		
-		
+		*/
 	}
 
 }

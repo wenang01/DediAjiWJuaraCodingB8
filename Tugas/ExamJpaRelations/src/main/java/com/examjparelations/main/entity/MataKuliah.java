@@ -34,17 +34,16 @@ public class MataKuliah {
 	@Column(name = "nama_matkul")
 	private String 	namaMataKuliah;
 
+	@ManyToMany(mappedBy = "lstMataKuliah")
+	private List<PlotMataKuliah> lstPlotMataKuliah;
+	
+	/*
 	@ManyToMany(cascade = CascadeType.ALL)
 	@JoinTable(
 	        name = "plot_mata_kuliah", 
 	        joinColumns = { @JoinColumn(name = "matkul_id", referencedColumnName = "id")},
 	        inverseJoinColumns = { @JoinColumn(name = "id", referencedColumnName = "id")})
-//	private List<MataKuliah> lstMataKuliah = new ArrayList<MataKuliah>();
 	private List<PlotMataKuliah> lstPlotMataKuliah;
-	/*
-	@ManyToMany(mappedBy = "lstMataKuliah")
-//	List<PlotMataKuliah> lstPlotMataKuliah = new ArrayList<PlotMataKuliah>();
-	List<PlotMataKuliah> lstPlotMataKuliah;
 	*/
 
 }

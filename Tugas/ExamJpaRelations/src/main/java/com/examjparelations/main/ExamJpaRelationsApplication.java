@@ -12,6 +12,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.examjparelations.main.entity.Admin;
 import com.examjparelations.main.entity.Dosen;
 import com.examjparelations.main.entity.Mahasiswa;
 import com.examjparelations.main.entity.MataKuliah;
@@ -19,6 +20,7 @@ import com.examjparelations.main.entity.Nilai;
 import com.examjparelations.main.entity.Pertanyaan;
 import com.examjparelations.main.entity.PlotMataKuliah;
 import com.examjparelations.main.entity.Soal;
+import com.examjparelations.main.repositories.AdminRepository;
 import com.examjparelations.main.repositories.DosenRepository;
 import com.examjparelations.main.repositories.MahasiswaRepository;
 import com.examjparelations.main.repositories.MataKuliahRepository;
@@ -33,7 +35,8 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 	public static void main(String[] args) {
 		SpringApplication.run(ExamJpaRelationsApplication.class, args);
 	}
-
+	
+	/*
 	@Autowired
 	MahasiswaRepository mahasiswaRepository;
 	
@@ -55,9 +58,13 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 	@Autowired
 	NilaiRepository nilaiRepository;
 	
+	@Autowired
+	AdminRepository adminRepository;
+	*/
 	@Override
 	public void run(String... args) throws Exception {
 
+		/*
 		//==MataKuliah==//
 		MataKuliah matkul1 = new MataKuliah();
 		matkul1.setId(234);
@@ -121,7 +128,7 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		
 		plotMataKuliah.setDosen_id(dosen.getId());
 		plotMataKuliah.setDosen_id(dosen2.getId());
-
+		
 		List<PlotMataKuliah> lstPlotsMataKuliah = new ArrayList<PlotMataKuliah>();
 		lstPlotsMataKuliah.add(plotMataKuliah);
 		
@@ -136,16 +143,18 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		
 		this.plotMataKuliahRepository.saveAll(lstPlotsMataKuliah);
 		
+
 		//==Soal==//
 		Soal soal = new Soal();
 		soal.setNama_soal("Matematika");
 		soal.setStatus("Tugas Harian");
+
+		List<Soal> lstSoal = new ArrayList<Soal>();
+		lstSoal.add(soal);		
 		soal.setPlot_id(plotMataKuliah.getId());
 		
-		List<Soal> lstSoal = new ArrayList<Soal>();
-		lstSoal.add(soal);
-		
 		this.soalRepository.saveAll(lstSoal);
+		
 		
 		//==Pertanyaan==//
 		Pertanyaan pertanyaan = new Pertanyaan();
@@ -160,7 +169,7 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 
 		List<Pertanyaan> lstPertanyaan = new ArrayList<Pertanyaan>();
 		lstPertanyaan.add(pertanyaan);
-		
+
 		this.pertanyaanRepository.saveAll(lstPertanyaan);
 		
 		
@@ -175,6 +184,18 @@ public class ExamJpaRelationsApplication implements CommandLineRunner{
 		
 		this.nilaiRepository.saveAll(lstNilai);
 		
+		
+		//==Admin==//
+		Admin admin = new Admin();
+		admin.setUsername("username");
+		admin.setPassword("password");
+		
+		List<Admin> lstAdmin = new ArrayList<Admin>();
+		lstAdmin.add(admin);
+		
+		this.adminRepository.saveAll(lstAdmin);
+		
+		*/
 	}
 
 }
